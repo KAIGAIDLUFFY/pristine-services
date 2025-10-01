@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now - Pristine Cleaning Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        const servicePrices = {
+            "Regular Cleaning - Standard Room": 1000,
+            "Regular Cleaning - Large Room": 2500,
+            "Regular Cleaning - Whole House": 5000,
+            "Deep Cleaning - Standard Room": 5000,
+            "Deep Cleaning - Large Room": 7500,
+            "Deep Cleaning - Whole House": 10000,
+            "Carpet Cleaning - Standard Room": 2000,
+            "Carpet Cleaning - Large Room": 3500,
+            "Carpet Cleaning - Whole House": 9000,
+            "Move In Cleaning": 7500,
+            "Move Out Cleaning": 9000,
+            "Mattress Cleaning - Single Mattress": 1500,
+            "Mattress Cleaning - Double Mattress": 2500,
+            "Mattress Cleaning - King Size Mattress": 3500,
+            "Curtain Cleaning - Standard Curtains": 1000,
+            "Curtain Cleaning - Large Curtains": 2000,
+            "Curtain Cleaning - Heavy/Drapes": 3000,
+            "Tile Cleaning - Standard Room": 2500,
+            "Tile Cleaning - Large Room": 4000,
+            "Decluttering - Standard Room": 3000,
+            "Decluttering - Large Room": 5000,
+            "Office Cleaning - Standard Office": 1500,
+            "Office Cleaning - Large Office": 3000,
+            "Restroom Sanitization - All Restrooms": 1500,
+            "Pressure Cleaning - Standard Area": 4000,
+            "Pressure Cleaning - Large Area": 7000,
+            "Floor Polishing - Standard Room": 3000,
+            "Floor Polishing - Large Room": 5000,
+            "Rubbish Removal - Standard Load": 2500,
+            "Rubbish Removal - Large Load": 5000,
+            "Water Damage Restoration - Standard Service": 10000,
+            "Water Damage Restoration - Intensive Service": 15000,
+            "Gardening - Standard Yard": 4000,
+            "Gardening - Large Yard": 7000,
+            "Roof Cleaning - Standard Roof": 5000,
+            "Roof Cleaning - Large Roof": 8000,
+            "Pest Control - Standard Treatment": 3000,
+            "Pest Control - Intensive Treatment": 6000,
+            "Labour Hire - Per Hour": 500,
+            "Labour Hire - Full Day": 3500
+        };
+
+        function updatePrice() {
+            const serviceSelect = document.getElementById('service');
+            const priceInput = document.getElementById('price');
+            const selectedService = serviceSelect.value;
+            const price = servicePrices[selectedService];
+            priceInput.value = price ? `${price} Shillings` : '';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="booking.html">Book Now</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Services</a>
+                    <div class="dropdown-content">
+                        <a href="residential.html">Residential Services</a>
+                        <a href="commercial.html">Commercial Services</a>
+                        <a href="additional services.html">Additional Services</a>
+                        <a href="prices.html">Our Prices</a>
+            </div>
+                
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Book a Service</h1>
+        <form action="booking-confirmation.html" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <br>
+            <label for="service">Service:</label>
+            <select id="service" name="service" onchange="updatePrice()" required>
+                <option value="">Select a service</option>
+                <optgroup label="Residential Services">
+                    <option value="Regular Cleaning - Standard Room">Regular Cleaning - Standard Room</option>
+                    <option value="Regular Cleaning - Large Room">Regular Cleaning - Large Room</option>
+                    <option value="Regular Cleaning - Whole House">Regular Cleaning - Whole House</option>
+                    <option value="Deep Cleaning - Standard Room">Deep Cleaning - Standard Room</option>
+                    <option value="Deep Cleaning - Large Room">Deep Cleaning - Large Room</option>
+                    <option value="Deep Cleaning - Whole House">Deep Cleaning - Whole House</option>
+                    <option value="Carpet Cleaning - Standard Room">Carpet Cleaning - Standard Room</option>
+                    <option value="Carpet Cleaning - Large Room">Carpet Cleaning - Large Room</option>
+                    <option value="Carpet Cleaning - Whole House">Carpet Cleaning - Whole House</option>
+                    <option value="Move In Cleaning">Move In Cleaning</option>
+                    <option value="Move Out Cleaning">Move Out Cleaning</option>
+                    <option value="Mattress Cleaning - Single Mattress">Mattress Cleaning - Single Mattress</option>
+                    <option value="Mattress Cleaning - Double Mattress">Mattress Cleaning - Double Mattress</option>
+                    <option value="Mattress Cleaning - King Size Mattress">Mattress Cleaning - King Size Mattress</option>
+                    <option value="Curtain Cleaning - Standard Curtains">Curtain Cleaning - Standard Curtains</option>
+                    <option value="Curtain Cleaning - Large Curtains">Curtain Cleaning - Large Curtains</option>
+                    <option value="Curtain Cleaning - Heavy/Drapes">Curtain Cleaning - Heavy/Drapes</option>
+                    <option value="Tile Cleaning - Standard Room">Tile Cleaning - Standard Room</option>
+                    <option value="Tile Cleaning - Large Room">Tile Cleaning - Large Room</option>
+                    <option value="Decluttering - Standard Room">Decluttering - Standard Room</option>
+                    <option value="Decluttering - Large Room">Decluttering - Large Room</option>
+                </optgroup>
+                <optgroup label="Commercial Services">
+                    <option value="Office Cleaning - Standard Office">Office Cleaning - Standard Office</option>
+                    <option value="Office Cleaning - Large Office">Office Cleaning - Large Office</option>
+                    <option value="Restroom Sanitization - All Restrooms">Restroom Sanitization - All Restrooms</option>
+                    <option value="Pressure Cleaning - Standard Area">Pressure Cleaning - Standard Area</option>
+                    <option value="Pressure Cleaning - Large Area">Pressure Cleaning - Large Area</option>
+                    <option value="Floor Polishing - Standard Room">Floor Polishing - Standard Room</option>
+                    <option value="Floor Polishing - Large Room">Floor Polishing - Large Room</option>
+                    <option value="Rubbish Removal - Standard Load">Rubbish Removal - Standard Load</option>
+                    <option value="Rubbish Removal - Large Load">Rubbish Removal - Large Load</option>
+                    <option value="Water Damage Restoration - Standard Service">Water Damage Restoration - Standard Service</option>
+                    <option value="Water Damage Restoration - Intensive Service">Water Damage Restoration - Intensive Service</option>
+                    <option value="Gardening - Standard Yard">Gardening - Standard Yard</option>
+                    <option value="Gardening - Large Yard">Gardening - Large Yard</option>
+                </optgroup>
+                <optgroup label="Additional Services">
+                    <option value="Roof Cleaning - Standard Roof">Roof Cleaning - Standard Roof</option>
+                    <option value="Roof Cleaning - Large Roof">Roof Cleaning - Large Roof</option>
+                    <option value="Pest Control - Standard Treatment">Pest Control - Standard Treatment</option>
+                    <option value="Pest Control - Intensive Treatment">Pest Control - Intensive Treatment</option>
+                    <option value="Labour Hire - Per Hour">Labour Hire - Per Hour</option>
+                    <option value="Labour Hire - Full Day">Labour Hire - Full Day</option>
+                </optgroup>
+            </select>
+            <br>
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" readonly>
+            <br>
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+            <br>
+            <button type="submit">Book Now</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Pristine Cleaning Services. All rights reserved.</p>
+    </footer>
+</body>
+</html>

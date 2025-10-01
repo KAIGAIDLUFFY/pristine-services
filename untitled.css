@@ -1,0 +1,112 @@
+/* General styles for the whole website */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('shutter1.jpg') no-repeat center center fixed; /* Background image settings */
+    background-size: cover; /* Ensures the image covers the whole screen */
+    color: #0c0c0c; /* Text color */
+}
+
+/* Header styles */
+header {
+    background: rgba(5, 33, 243, 0.9); /* Semi-transparent background for the header */
+    padding: 10px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    max-height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    color: white;
+    text-align: center;
+}
+
+.services {
+    padding: 50px 0;
+    background: white;
+}
+
+.services .service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.services .service-item {
+    flex: 1 1 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+.service-item h3 {
+    color: #0818f8;
+}
+
+.service-item p {
+    text-indent: 2em;
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+}
+
+/* Footer styles */
+footer {
+    background: rgba(51, 51, 51, 0.9);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer nav ul li {
+    margin: 0 15px;
+}
+
+footer nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}

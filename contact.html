@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Pristine Cleaning Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById('contact-form');
+            const nameField = document.getElementById('Name');
+            const emailField = document.getElementById('Email');
+            const messageField = document.getElementById('Message');
+
+            form.addEventListener('submit', function(event) {
+                let isValid = true;
+
+                // Clear previous error messages
+                document.querySelectorAll('.error-message').forEach(el => el.remove());
+
+                // Validate Name
+                if (nameField.value.trim() === "") {
+                    showError(nameField, "Name is required.");
+                    isValid = false;
+                }
+
+                // Validate Email
+                if (emailField.value.trim() === "") {
+                    showError(emailField, "Email is required.");
+                    isValid = false;
+                } else if (!validateEmail(emailField.value)) {
+                    showError(emailField, "Please enter a valid email address.");
+                    isValid = false;
+                }
+
+                // Validate Message
+                if (messageField.value.trim() === "") {
+                    showError(messageField, "Message is required.");
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+
+            function showError(input, message) {
+                const error = document.createElement('div');
+                error.className = 'error-message';
+                error.textContent = message;
+                input.parentElement.appendChild(error);
+            }
+
+            function validateEmail(email) {
+                const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                return re.test(email);
+            }
+        });
+    </script>
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="booking.html">Book Now</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Services</a>
+                    <div class="dropdown-content">
+                        <a href="residential.html">Residential Services</a>
+                        <a href="commercial.html">Commercial Services</a>
+                        <a href="additional_services.html">Additional Services</a>
+                        <a href="prices.html">Our Prices</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <form id="contact-form" method="post" action="contact.php">
+            <label for="Name">Name:</label>
+            <input type="text" id="Name" name="Name" required>
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" required>
+            <label for="Message">Message:</label>
+            <textarea id="Message" name="Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Pristine Cleaning. All rights reserved.</p>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                        <li><a href="terms_of_service.html">Terms of Service</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script src="contact.js"></script>
+</body>
+</html>
